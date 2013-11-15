@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>testcvblob.hpp</itemPath>
+      <itemPath>testfps.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="Images" projectFiles="true">
+      <itemPath>colored_balls.jpg</itemPath>
+      <itemPath>colored_shapes.jpg</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+      <itemPath>testcvblob.cpp</itemPath>
+      <itemPath>testfps.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>true</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>/usr/local/include/opencv</pElem>
+          </incDir>
+          <commandLine>-v</commandLine>
+        </cTool>
+        <ccTool>
+          <commandlineTool>g++</commandlineTool>
+          <incDir>
+            <pElem>/usr/local/include/opencv</pElem>
+          </incDir>
+          <commandLine>-v</commandLine>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv</output>
+          <linkerAddLib>
+            <pElem>/usr/lib</pElem>
+            <pElem>/usr/local/lib</pElem>
+            <pElem>/usr/local/include/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>/usr/local/lib/libopencv_calib3d.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_contrib.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_core.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_features2d.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_gpu.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_highgui.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_imgproc.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_legacy.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_ml.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_nonfree.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_objdetect.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_photo.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_stitching.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_ts.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_video.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_videostab.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libswresample.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libswscale.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libv4l1.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libv4l2.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libv4lconvert.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libx264.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libv4l/v4l1compat.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libv4l/v4l2convert.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/python2.7/dist-packages/cv2.so</linkerLibFileItem>
+            <linkerLibFileItem>../../cvblob/lib/libcvblob.so</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="colored_balls.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="colored_shapes.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testcvblob.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testcvblob.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="testfps.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testfps.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>/usr/local/include/opencv</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <stripSymbols>true</stripSymbols>
+          <incDir>
+            <pElem>/usr/local/include/opencv</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/lib</pElem>
+            <pElem>/usr/local/lib</pElem>
+            <pElem>/usr/local/include/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>/usr/local/lib/libcvblob.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_calib3d.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_contrib.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_core.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_features2d.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_flann.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_gpu.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_highgui.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_imgproc.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_legacy.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_ml.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_nonfree.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_objdetect.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_photo.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_stitching.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_ts.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_video.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_videostab.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/python2.7/dist-packages/cv2.so</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}colored_balls.jpg"
+                            from="colored_balls.jpg"
+                            perm="400"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}colored_shapes.jpg"
+                            from="colored_shapes.jpg"
+                            perm="400"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
+      <item path="colored_balls.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="colored_shapes.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testcvblob.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testcvblob.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="testfps.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testfps.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
