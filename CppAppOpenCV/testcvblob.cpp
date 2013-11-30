@@ -14,6 +14,7 @@
 using namespace cvb;
 using namespace std;
 
+// Test 3: OpenCV and cvBlob (w/ webcam feed)
 int DetectBlobsNoStillImage() {
     /// Variables /////////////////////////////////////////////////////////
     CvSize imgSize;
@@ -59,6 +60,7 @@ int DetectBlobsNoStillImage() {
     return 0;
 }
 
+// Test 4: OpenCV and cvBlob (w/o webcam feed)
 int DetectBlobsShowStillImage() {
     /// Variables /////////////////////////////////////////////////////////
     CvSize imgSize;
@@ -129,6 +131,7 @@ int DetectBlobsShowStillImage() {
     return 0;
 }
 
+// Test 5: Blob Tracking (w/ webcam feed)
 int DetectBlobsNoVideo(int captureWidth, int captureHeight) {
     /// Variables /////////////////////////////////////////////////////////
     CvCapture *capture;
@@ -224,6 +227,7 @@ int DetectBlobsNoVideo(int captureWidth, int captureHeight) {
     return 0;
 }
 
+// Test 6: Blob Tracking (w/o webcam feed)
 int DetectBlobsShowVideo(int captureWidth, int captureHeight) {
     /// Variables /////////////////////////////////////////////////////////
     CvCapture *capture;

@@ -14,6 +14,7 @@
 
 using namespace std;
 
+// Test 1: OpenCV (w/ webcam feed)
 int TestFpsNoVideo(int captureWidth, int captureHeight) {
     IplImage* frame;
     CvCapture* capture = cvCreateCameraCapture(-1);
@@ -54,6 +55,7 @@ int TestFpsNoVideo(int captureWidth, int captureHeight) {
     return 0;
 }
 
+// Test 2: OpenCV (w/o webcam feed)
 int TestFpsShowVideo(int captureWidth, int captureHeight) {
     IplImage* frame;
     CvCapture* capture = cvCreateCameraCapture(-1);
