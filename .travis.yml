@@ -1,5 +1,15 @@
-language: cpp
+language:
+  - cpp
 
-compiler: gcc
+compiler:
+  - gcc
 
-script: cd CppAppOpenCV && make -f nbproject/Makefile-Release.mk QMAKE= SUBPROJECTS= .build-conf
+install:
+  - git clone https://github.com/jayrambhia/Install-OpenCV
+  - cd Install-OpenCV/Ubuntu
+  - ./opencv_latest.sh
+  - sh install_cvBlob.sh
+
+script:
+  - cd CppAppOpenCV
+  - make -f nbproject/Makefile-Release.mk QMAKE= SUBPROJECTS= .build-conf
