@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+# Build and Dist Directories
+dist/
+build/
+private/

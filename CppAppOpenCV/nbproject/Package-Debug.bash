@@ -13,8 +13,8 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv
-OUTPUT_BASENAME=cppappopencv
+OUTPUT_PATH=${TESTDIR}/TestFiles/f1
+OUTPUT_BASENAME=f1
 PACKAGE_TOP_DIR=cppappopencv/
 
 # Functions
@@ -62,6 +62,18 @@ mkdir -p ${NBTMPDIR}
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/cppappopencv/bin"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/cppappopencv"
+copyFileToTmpDir "colored_balls.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_balls.jpg" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/cppappopencv"
+copyFileToTmpDir "colored_balls_50prcnt.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_balls_50prcnt.jpg" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/cppappopencv"
+copyFileToTmpDir "colored_shapes.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_shapes.jpg" 0644
 
 
 # Generate tar file

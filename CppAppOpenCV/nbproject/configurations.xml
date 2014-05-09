@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>testcvblob.hpp</itemPath>
+      <itemPath>testcvblobstill.hpp</itemPath>
+      <itemPath>testcvblobvideo.hpp</itemPath>
       <itemPath>testfps.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="f1" displayName="Images" projectFiles="true">
@@ -19,7 +20,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>main.cpp</itemPath>
-      <itemPath>testcvblob.cpp</itemPath>
+      <itemPath>testcvblobstill.cpp</itemPath>
+      <itemPath>testcvblobvideo.cpp</itemPath>
       <itemPath>testfps.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -46,6 +48,7 @@
         <cTool>
           <incDir>
             <pElem>/usr/local/include/opencv</pElem>
+            <pElem>.</pElem>
           </incDir>
           <commandLine>-v</commandLine>
         </cTool>
@@ -53,12 +56,13 @@
           <commandlineTool>g++</commandlineTool>
           <incDir>
             <pElem>/usr/local/include/opencv</pElem>
+            <pElem>.</pElem>
           </incDir>
           <commandLine>-v</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
-          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv</output>
+          <output>${TESTDIR}/TestFiles/f1</output>
           <linkerAddLib>
             <pElem>/usr/lib</pElem>
             <pElem>/usr/local/lib</pElem>
@@ -94,30 +98,48 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}colored_balls.jpg"
+                            from="colored_balls.jpg"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}colored_balls_50prcnt.jpg"
+                            from="colored_balls_50prcnt.jpg"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}colored_shapes.jpg"
+                            from="colored_shapes.jpg"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
       <item path="colored_balls.jpg" ex="false" tool="3" flavor2="0">
       </item>
       <item path="colored_shapes.jpg" ex="false" tool="3" flavor2="0">
       </item>
-      <folder path="TestFiles/f1">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f1</output>
-        </linkerTool>
-      </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="testcvblob.cpp" ex="false" tool="1" flavor2="0">
+      <item path="testcvblobstill.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="testcvblob.hpp" ex="false" tool="3" flavor2="0">
+      <item path="testcvblobstill.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="testcvblobvideo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testcvblobvideo.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="testfps.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -135,12 +157,14 @@
           <developmentMode>5</developmentMode>
           <incDir>
             <pElem>/usr/local/include/opencv</pElem>
+            <pElem>.</pElem>
           </incDir>
         </cTool>
         <ccTool>
           <stripSymbols>true</stripSymbols>
           <incDir>
             <pElem>/usr/local/include/opencv</pElem>
+            <pElem>.</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -150,6 +174,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv</output>
           <linkerAddLib>
             <pElem>/usr/lib</pElem>
             <pElem>/usr/local/lib</pElem>
@@ -190,13 +215,13 @@
           <packFileListElem type="File"
                             to="${PACKAGE_TOP_DIR}colored_balls.jpg"
                             from="colored_balls.jpg"
-                            perm="400"
+                            perm="644"
                             owner="root"
                             group="bin"/>
           <packFileListElem type="File"
                             to="${PACKAGE_TOP_DIR}colored_shapes.jpg"
                             from="colored_shapes.jpg"
-                            perm="400"
+                            perm="644"
                             owner="root"
                             group="bin"/>
         </packFileList>
@@ -205,26 +230,15 @@
       </item>
       <item path="colored_shapes.jpg" ex="false" tool="3" flavor2="0">
       </item>
-      <folder path="TestFiles/f1">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f1</output>
-        </linkerTool>
-      </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="testcvblob.cpp" ex="false" tool="1" flavor2="0">
+      <item path="testcvblobstill.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="testcvblob.hpp" ex="false" tool="3" flavor2="0">
+      <item path="testcvblobstill.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="testcvblobvideo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testcvblobvideo.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="testfps.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -36,7 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/testcvblob.o \
+	${OBJECTDIR}/testcvblobstill.o \
+	${OBJECTDIR}/testcvblobvideo.o \
 	${OBJECTDIR}/testfps.o
 
 
@@ -104,18 +105,23 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv: ${OBJECTFILES}
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/testcvblob.o: testcvblob.cpp 
+${OBJECTDIR}/testcvblobstill.o: testcvblobstill.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF $@.d -o ${OBJECTDIR}/testcvblob.o testcvblob.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testcvblobstill.o testcvblobstill.cpp
+
+${OBJECTDIR}/testcvblobvideo.o: testcvblobvideo.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testcvblobvideo.o testcvblobvideo.cpp
 
 ${OBJECTDIR}/testfps.o: testfps.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF $@.d -o ${OBJECTDIR}/testfps.o testfps.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testfps.o testfps.cpp
 
 # Subprojects
 .build-subprojects:

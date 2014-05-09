@@ -65,11 +65,11 @@ copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BA
 
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/cppappopencv"
-copyFileToTmpDir "colored_balls.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_balls.jpg" 0400
+copyFileToTmpDir "colored_balls.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_balls.jpg" 0644
 
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/cppappopencv"
-copyFileToTmpDir "colored_shapes.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_shapes.jpg" 0400
+copyFileToTmpDir "colored_shapes.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_shapes.jpg" 0644
 
 
 # Generate tar file
