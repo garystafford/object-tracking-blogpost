@@ -69,10 +69,6 @@ copyFileToTmpDir "colored_balls.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_ball
 
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/cppappopencv"
-copyFileToTmpDir "colored_balls_50prcnt.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_balls_50prcnt.jpg" 0644
-
-cd "${TOP}"
-makeDirectory "${NBTMPDIR}/cppappopencv"
 copyFileToTmpDir "colored_shapes.jpg" "${NBTMPDIR}/${PACKAGE_TOP_DIR}colored_shapes.jpg" 0644
 
 

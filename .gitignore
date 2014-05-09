@@ -15,4 +15,4 @@
 # Build and Dist Directories
 dist/
 build/
-**/private/
+**/private

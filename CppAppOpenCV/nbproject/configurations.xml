@@ -114,12 +114,6 @@
                             owner="root"
                             group="bin"/>
           <packFileListElem type="File"
-                            to="${PACKAGE_TOP_DIR}colored_balls_50prcnt.jpg"
-                            from="colored_balls_50prcnt.jpg"
-                            perm="644"
-                            owner="root"
-                            group="bin"/>
-          <packFileListElem type="File"
                             to="${PACKAGE_TOP_DIR}colored_shapes.jpg"
                             from="colored_shapes.jpg"
                             perm="644"
