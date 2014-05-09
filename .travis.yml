@@ -1,12 +1,5 @@
 language: cpp
 
-compiler:
-  - gcc
+compiler: gcc
 
-before_script:
-  - mkdir build
-  - cd build
-  - cmake ..
-
-script: make
-
+script: make -f nbproject/Makefile-Release.mk
