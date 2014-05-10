@@ -3,7 +3,7 @@
 </p>
 
 ##Object Tracking Project
-Use C++ with OpenCV and cvBlob to perform image processing and object tracking on using a webcam. Originally, built to test Raspberry Pi performance.
+Use C++ with OpenCV and cvBlob to perform image processing and object tracking, using a webcam. Originally, built to test Raspberry Pi performance.
 
 #### GitHub Branches
 ##### Master 
