@@ -190,7 +190,7 @@
             <linkerLibFileItem>/usr/local/lib/libopencv_objdetect.so</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libopencv_photo.so</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libopencv_stitching.so</linkerLibFileItem>
-            <linkerLibFileItem>/usr/local/lib/libopencv_ts.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libopencv_ts.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libopencv_video.so</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libopencv_videostab.so</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/python2.7/dist-packages/cv2.so</linkerLibFileItem>
