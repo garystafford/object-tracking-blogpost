@@ -2,7 +2,7 @@
 <a href='https://travis-ci.org/garystafford/object-tracking-blogpost'><img src='https://travis-ci.org/garystafford/object-tracking-blogpost.svg?branch=rev05_2014'></a>
 </p>
 
-##Object Tracking Project and Blog Posts
+##Object Tracking Project
 
 #### GitHub Branches
 ##### Master 
