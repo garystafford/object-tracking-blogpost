@@ -201,7 +201,7 @@
         <packType>Tar</packType>
         <packFileList>
           <packFileListElem type="File"
-                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            to="${PACKAGE_TOP_DIR}${OUTPUT_BASENAME}"
                             from="${OUTPUT_PATH}"
                             perm="755"
                             owner="root"

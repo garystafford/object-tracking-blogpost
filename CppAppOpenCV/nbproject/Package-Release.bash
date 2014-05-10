@@ -60,8 +60,8 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/cppappopencv/bin"
-copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
+makeDirectory "${NBTMPDIR}/cppappopencv"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}${OUTPUT_BASENAME}" 0755
 
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/cppappopencv"
