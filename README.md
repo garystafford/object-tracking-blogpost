@@ -1,3 +1,8 @@
+<p>
+<a href='https://travis-ci.org/garystafford/environment-estimator'><img src='https://travis-ci.org/garystafford/environment-estimator.svg?branch=master'></a>
+</p>
+
+
 object-tracking-blogpost
 ========================
 
