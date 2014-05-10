@@ -19,18 +19,22 @@ Revised code for future blog post:
 
 #### Installation and Configuration
 ```
+################################################################
 #
 # installs latest OpenCV, cvBlob, all dependencies on Ubuntu
 # git clones, builds, and runs project on Ubuntu
-# assumes clean base Ubuntu VM with no previous installs.
+# tested with fresh Ubuntu image on VirtualBox VM
+#
+################################################################
 
+sudo apt-get update && sudo apt-get -y upgrade
 
 # install OpenCV
 cd ~/
 sudo apt-get -y install git
 git clone https://github.com/jayrambhia/Install-OpenCV
 cd Install-OpenCV/Ubuntu
-./opencv_latest.sh
+./opencv_latest.sh | tee ~/opencv_install.log
 
 # install project
 cd ~/
@@ -38,7 +42,7 @@ git clone https://github.com/garystafford/object-tracking-blogpost.git
 
 #install cvBlob (uses script from project)
 cd ~/object-tracking-blogpost
-sh install_cvBlob.sh
+sh install_cvBlob.sh | tee ~/cvblob_install.log
 
 # build project (compile app)
 cd ~/object-tracking-blogpost/CppAppOpenCV
@@ -56,6 +60,15 @@ cd ~/object-tracking-blogpost/CppAppOpenCV
 bash nbproject/Package-Release.bash
 # package located here: ~/object-tracking-blogpost/CppAppOpenCV/dist/Release/GNU-Linux-x86/package/cppappopencv.tar
 ```
-
-
+#### Color Range Examples
+These are the values shown in the blog post and YouTube video
+* Red balls
+  * Low RGB: 155, 0, 0
+  * High RGB: 255, 130, 130 
+* Blue paper
+  * Low RGB: 49, 69, 100
+  * High RGB: 134, 163, 216 
+* Green paper
+  * Low RGB: 45, 92, 76
+  * High RGB: 70, 155, 124 
  
