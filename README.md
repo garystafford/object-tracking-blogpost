@@ -1,7 +1,6 @@
 <p>
-<a href='https://travis-ci.org/garystafford/environment-estimator'><img src='https://travis-ci.org/garystafford/environment-estimator.svg?branch=master'></a>
+<a href='https://travis-ci.org/garystafford/object-tracking-blogpost'><img src='https://travis-ci.org/garystafford/object-tracking-blogpost.svg?branch=rev05_2014'></a>
 </p>
-
 
 object-tracking-blogpost
 ========================
