@@ -11,15 +11,14 @@
 #include <cvblob.h>
 
 #include "testcvblobvideo.hpp"
+#include "imageParams.h"
 
 using namespace cvb;
 using namespace std;
 
 // Test 5: Blob Tracking (w/ webcam feed)
 
-int DetectBlobsNoVideo(int captureWidth, int captureHeight,
-        double lowR, double lowG, double lowB,
-        double highR, double highG, double highB) {
+int DetectBlobsNoVideo(struct imageParams params) {
     /// Variables /////////////////////////////////////////////////////////
     CvCapture *capture;
     CvSize imgSize;
@@ -37,8 +36,8 @@ int DetectBlobsNoVideo(int captureWidth, int captureHeight,
     ///////////////////////////////////////////////////////////////////////
 
     capture = cvCaptureFromCAM(-1);
-    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, captureWidth);
-    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, captureHeight);
+    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, params.captureWidth);
+    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, params.captureHeight);
     cvGrabFrame(capture);
     image = cvRetrieveFrame(capture);
 
@@ -59,8 +58,8 @@ int DetectBlobsNoVideo(int captureWidth, int captureHeight,
 
         segmentated = cvCreateImage(imgSize, 8, 1);
 
-        cvInRangeS(image, CV_RGB(lowR, lowG, lowB),
-                CV_RGB(highR, highG, highB), segmentated);
+        cvInRangeS(image, CV_RGB(params.lowR, params.lowG, params.lowB),
+                CV_RGB(params.highR, params.highG, params.highB), segmentated);
 
         //Can experiment either or both
         cvSmooth(segmentated, segmentated, CV_MEDIAN, 7, 7);
@@ -117,14 +116,12 @@ int DetectBlobsNoVideo(int captureWidth, int captureHeight,
 
 // Test 6: Blob Tracking (w/o webcam feed)
 
-int DetectBlobsShowVideo(int captureWidth, int captureHeight,
-        double lowR, double lowG, double lowB,
-        double highR, double highG, double highB) {
+int DetectBlobsShowVideo(struct imageParams params) {
     /// Variables /////////////////////////////////////////////////////////
     CvCapture *capture;
     CvSize imgSize;
 
-    IplImage *image, *frame, *segmentated, *labelImg;
+    IplImage *image, *frame, *segmentated, *labelImg, *colorRange;
     CvPoint pt1, pt2, pt3, pt4, pt5, pt6;
     CvScalar red, green, blue;
     int picWidth, picHeight, thickness;
@@ -139,13 +136,15 @@ int DetectBlobsShowVideo(int captureWidth, int captureHeight,
     ///////////////////////////////////////////////////////////////////////
 
     cvNamedWindow("Processed Video Frames", CV_WINDOW_AUTOSIZE);
-    cvMoveWindow("Processed Video Frames", 750, 400);
+    cvMoveWindow("Processed Video Frames", 600, 100);
     cvNamedWindow("Webcam Preview", CV_WINDOW_AUTOSIZE);
-    cvMoveWindow("Webcam Preview", 200, 100);
+    cvMoveWindow("Webcam Preview", 100, 100);
+    cvNamedWindow("Color Range", CV_WINDOW_AUTOSIZE);
+    cvMoveWindow("Color Range", 100, 600);
 
     capture = cvCaptureFromCAM(-1);
-    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, captureWidth);
-    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, captureHeight);
+    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, params.captureWidth);
+    cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, params.captureHeight);
     cvGrabFrame(capture);
     image = cvRetrieveFrame(capture);
 
@@ -167,14 +166,8 @@ int DetectBlobsShowVideo(int captureWidth, int captureHeight,
 
         segmentated = cvCreateImage(imgSize, 8, 1);
 
-        //Blue paper
-        //cvInRangeS(image, CV_RGB(49, 69, 100), CV_RGB(134, 163, 216), segmentated);
-
-        //Green paper
-        //cvInRangeS(image, CV_RGB(45, 92, 76), CV_RGB(70, 155, 124), segmentated);
-
-        cvInRangeS(image, CV_RGB(lowR, lowG, lowB),
-                CV_RGB(highR, highG, highB), segmentated);
+        cvInRangeS(image, CV_RGB(params.lowR, params.lowG, params.lowB),
+                CV_RGB(params.highR, params.highG, params.highB), segmentated);
 
         //Can experiment either or both
         cvSmooth(segmentated, segmentated, CV_MEDIAN, 7, 7);
@@ -206,6 +199,15 @@ int DetectBlobsShowVideo(int captureWidth, int captureHeight,
 
         cvShowImage("Webcam Preview", frame);
         cvShowImage("Processed Video Frames", segmentated);
+
+        // Show color range values in separate window
+        colorRange = cvCreateImage(cvSize(200, 100), 8, 3);
+        cvZero(colorRange);
+        cvRectangle(colorRange, cvPoint(0, 0), cvPoint(100, 100),
+                CV_RGB(params.lowR, params.lowG, params.lowB), CV_FILLED);
+        cvRectangle(colorRange, cvPoint(100, 0), cvPoint(200, 100),
+                CV_RGB(params.highR, params.highG, params.highB), CV_FILLED);
+        cvShowImage("Color Range", colorRange);
 
         if (cvGreaterBlob(blobs)) {
             blob = blobs[cvGreaterBlob(blobs)];
@@ -244,6 +246,7 @@ int DetectBlobsShowVideo(int captureWidth, int captureHeight,
     cvReleaseImage(&segmentated);
     cvReleaseImage(&frame);
     cvReleaseImage(&image);
+    cvReleaseImage(&colorRange);
 
     cvDestroyAllWindows();
 

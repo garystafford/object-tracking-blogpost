@@ -9,10 +9,8 @@
 #ifndef TESTCVBLOBSTILL_HPP
 #define	TESTCVBLOBSTILL_HPP
 
-int DetectBlobsNoStillImage(double lowR, double lowG, double lowB,
-        double highR, double highG, double highB);
-int DetectBlobsShowStillImage(double lowR, double lowG, double lowB,
-        double highR, double highG, double highB);
+int DetectBlobsNoStillImage(struct imageParams params);
+int DetectBlobsShowStillImage(struct imageParams params);
 
 #endif	/* TESTCVBLOBSTILL_HPP */
 

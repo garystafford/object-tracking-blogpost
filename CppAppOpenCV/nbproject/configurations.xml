@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>imageParams.h</itemPath>
       <itemPath>testcvblobstill.hpp</itemPath>
       <itemPath>testcvblobvideo.hpp</itemPath>
       <itemPath>testfps.hpp</itemPath>
@@ -19,6 +20,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>imageParams.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>testcvblobstill.cpp</itemPath>
       <itemPath>testcvblobvideo.cpp</itemPath>
@@ -125,6 +127,10 @@
       </item>
       <item path="colored_shapes.jpg" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="imageParams.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="imageParams.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="testcvblobstill.cpp" ex="false" tool="1" flavor2="0">
@@ -223,6 +229,10 @@
       <item path="colored_balls.jpg" ex="false" tool="3" flavor2="0">
       </item>
       <item path="colored_shapes.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="imageParams.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="imageParams.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

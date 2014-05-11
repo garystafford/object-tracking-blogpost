@@ -8,8 +8,8 @@
 #ifndef TESTFPS_HPP
 #define	TESTFPS_HPP
 
-int TestFpsNoVideo(int captureWidth, int captureHeight);
-int TestFpsShowVideo(int captureWidth, int captureHeight);
+int TestFpsNoVideo(struct imageParams params);
+int TestFpsShowVideo(struct imageParams params);
 
 #endif	/* TESTFPS_HPP */
 

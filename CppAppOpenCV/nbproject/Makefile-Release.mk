@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/imageParams.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/testcvblobstill.o \
 	${OBJECTDIR}/testcvblobvideo.o \
@@ -102,6 +103,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv: /usr/local/lib/python2.
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/imageParams.o: imageParams.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/imageParams.o imageParams.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

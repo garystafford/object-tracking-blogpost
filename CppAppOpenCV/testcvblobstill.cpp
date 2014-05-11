@@ -11,14 +11,14 @@
 #include <cvblob.h>
 
 #include "testcvblobstill.hpp"
+#include "imageParams.h"
 
 using namespace cvb;
 using namespace std;
 
 // Test 3: OpenCV and cvBlob (w/ webcam feed)
 
-int DetectBlobsNoStillImage(double lowR, double lowG, double lowB,
-        double highR, double highG, double highB) {
+int DetectBlobsNoStillImage(struct imageParams params) {
     /// Variables /////////////////////////////////////////////////////////
     CvSize imgSize;
     IplImage *image, *segmentated, *labelImg;
@@ -45,8 +45,8 @@ int DetectBlobsNoStillImage(double lowR, double lowG, double lowB,
     segmentated = cvCreateImage(imgSize, 8, 1);
 
     //cvInRangeS(image, CV_RGB(155, 0, 0), CV_RGB(255, 130, 130), segmentated);
-    cvInRangeS(image, CV_RGB(lowR, lowG, lowB),
-            CV_RGB(highR, highG, highB), segmentated);
+    cvInRangeS(image, CV_RGB(params.lowR, params.lowG, params.lowB),
+            CV_RGB(params.highR, params.highG, params.highB), segmentated);
 
     labelImg = cvCreateImage(cvGetSize(image), IPL_DEPTH_LABEL, 1);
 
@@ -68,11 +68,10 @@ int DetectBlobsNoStillImage(double lowR, double lowG, double lowB,
 
 // Test 4: OpenCV and cvBlob (w/o webcam feed)
 
-int DetectBlobsShowStillImage(double lowR, double lowG, double lowB,
-        double highR, double highG, double highB) {
+int DetectBlobsShowStillImage(struct imageParams params) {
     /// Variables /////////////////////////////////////////////////////////
     CvSize imgSize;
-    IplImage *image, *frame, *segmentated, *labelImg;
+    IplImage *image, *frame, *segmentated, *labelImg, *colorRange;
     CvBlobs blobs;
 
     unsigned int result = 0;
@@ -81,8 +80,10 @@ int DetectBlobsShowStillImage(double lowR, double lowG, double lowB,
 
     cvNamedWindow("Processed Image", CV_WINDOW_AUTOSIZE);
     cvMoveWindow("Processed Image", 750, 100);
-    cvNamedWindow("Image", CV_WINDOW_AUTOSIZE);
-    cvMoveWindow("Image", 100, 100);
+    cvNamedWindow("Original Image", CV_WINDOW_AUTOSIZE);
+    cvMoveWindow("Original Image", 100, 100);
+    cvNamedWindow("Color Range", CV_WINDOW_AUTOSIZE);
+    cvMoveWindow("Color Range", 100, 600);
 
     image = cvLoadImage("colored_balls.jpg");
 
@@ -105,8 +106,8 @@ int DetectBlobsShowStillImage(double lowR, double lowG, double lowB,
 
     segmentated = cvCreateImage(imgSize, 8, 1);
 
-    cvInRangeS(image, CV_RGB(lowR, lowG, lowB),
-            CV_RGB(highR, highG, highB), segmentated);
+    cvInRangeS(image, CV_RGB(params.lowR, params.lowG, params.lowB),
+            CV_RGB(params.highR, params.highG, params.highB), segmentated);
     cvSmooth(segmentated, segmentated, CV_MEDIAN, 7, 7);
 
     labelImg = cvCreateImage(cvGetSize(frame), IPL_DEPTH_LABEL, 1);
@@ -116,9 +117,18 @@ int DetectBlobsShowStillImage(double lowR, double lowG, double lowB,
     cvRenderBlobs(labelImg, blobs, frame, frame,
             CV_BLOB_RENDER_BOUNDING_BOX | CV_BLOB_RENDER_TO_STD, 1.);
 
-    cvShowImage("Image", frame);
+    cvShowImage("Original Image", frame);
     cvShowImage("Processed Image", segmentated);
-
+    
+    // Show color range values in separate window
+    colorRange = cvCreateImage(cvSize(200,100),8,3);  
+    cvZero(colorRange);  
+    cvRectangle(colorRange, cvPoint(0,0), cvPoint(100, 100), 
+            CV_RGB(params.lowR, params.lowG, params.lowB), CV_FILLED);  
+    cvRectangle(colorRange, cvPoint(100,0), cvPoint(200, 100), 
+            CV_RGB(params.highR, params.highG, params.highB), CV_FILLED);  
+    cvShowImage("Color Range", colorRange);
+    
     while (!quit) {
         char k = cvWaitKey(10)&0xff;
         switch (k) {
@@ -135,6 +145,7 @@ int DetectBlobsShowStillImage(double lowR, double lowG, double lowB,
     cvReleaseImage(&segmentated);
     cvReleaseImage(&frame);
     cvReleaseImage(&image);
+    cvReleaseImage(&colorRange);
 
     cvDestroyAllWindows();
 

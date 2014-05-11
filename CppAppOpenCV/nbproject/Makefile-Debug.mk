@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/imageParams.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/testcvblobstill.o \
 	${OBJECTDIR}/testcvblobvideo.o \
@@ -116,6 +117,11 @@ ${TESTDIR}/TestFiles/f1: ../../cvblob/lib/libcvblob.so
 ${TESTDIR}/TestFiles/f1: ${OBJECTFILES}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc} -o ${TESTDIR}/TestFiles/f1 ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/imageParams.o: nbproject/Makefile-${CND_CONF}.mk imageParams.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/imageParams.o imageParams.cpp
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

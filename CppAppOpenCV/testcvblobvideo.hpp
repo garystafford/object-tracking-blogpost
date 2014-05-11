@@ -9,12 +9,8 @@
 #ifndef TESTCVBLOBVIDEO_HPP
 #define	TESTCVBLOBVIDEO_HPP
 
-int DetectBlobsNoVideo(int captureWidth, int captureHeight,
-        double lowR, double lowG, double lowB,
-        double highR, double highG, double highB);
-int DetectBlobsShowVideo(int captureWidth, int captureHeight,
-        double lowR, double lowG, double lowB,
-        double highR, double highG, double highB);
+int DetectBlobsNoVideo(struct imageParams params);
+int DetectBlobsShowVideo(struct imageParams params);
 
 #endif	/* TESTCVBLOBVIDEO_HPP */
 
