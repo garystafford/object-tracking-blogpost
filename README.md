@@ -12,7 +12,9 @@ Original code for my blog post, '[Object Tracking on the Raspberry Pi with C++, 
 ##### rev05_2014 
 Revised code for future blog post:
 * Refactored video blob methods into a separate class.
-* Removed hard-coded color ranges. Now input paramaters for those methods.
+* Removed hard-coded color ranges. Now input paramaters.
+* All methods now accept struct as input parameter.
+* New window displays low and high RGB color range.
 * Added support for Travis-CI. Project now building on each commit to GitHub.
 * Project contains code and directions to install latest OpenCV, cvBlob, and all neccessary dependencies on Ubuntu. Travis is using this code to prep for project builds.
 * Project contains directions on how to git clone, build, and run project on Ubuntu.
