@@ -12,11 +12,11 @@ Original code for my blog post, '[Object Tracking on the Raspberry Pi with C++, 
 ##### rev05_2014 
 Revised code for future blog post:
 * Refactored video blob methods into a separate class.
-* Removed hard-coded color ranges. Now input paramaters.
+* Removed hard-coded color ranges. Now input parameters.
 * All methods now accept struct as input parameter.
 * New window displays low and high RGB color range.
 * Added support for Travis-CI. Project now building on each commit to GitHub.
-* Project contains code and directions to install latest OpenCV, cvBlob, and all neccessary dependencies on Ubuntu. Travis is using this code to prep for project builds.
+* Project contains code and directions to install latest OpenCV, cvBlob, and all necessary dependencies on Ubuntu. Travis is using this code to prep for project builds.
 * Project contains directions on how to git clone, build, and run project on Ubuntu.
 
 #### Installation and Configuration
@@ -60,7 +60,11 @@ cd ~/object-tracking-blogpost/CppAppOpenCV/dist/Release/GNU-Linux-x86
 # package app for distribution as .tar (incld. static images)
 cd ~/object-tracking-blogpost/CppAppOpenCV
 bash nbproject/Package-Release.bash
-# package located here: ~/object-tracking-blogpost/CppAppOpenCV/dist/Release/GNU-Linux-x86/package/cppappopencv.tar
+
+# use package
+cd ~/object-tracking-blogpost/CppAppOpenCV/dist/Release/GNU-Linux-x86/package/
+tar -xvf cppappopencv.tar -C ~/
+
 ```
 #### Color Range Examples
 These are the values shown in the blog post and YouTube video
