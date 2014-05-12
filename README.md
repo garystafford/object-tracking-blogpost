@@ -10,25 +10,18 @@ Use C++ with OpenCV and cvBlob to perform image processing and object tracking, 
 Original code for my blog post, '[Object Tracking on the Raspberry Pi with C++, OpenCV, and cvBlob](http://wp.me/p1RD28-yW)'
 
 ##### rev05_2014 
-Revised code for future blog post:
-* Refactored video blob methods into a separate class.
-* Removed hard-coded color ranges. Now input parameters.
-* All methods now accept struct as input parameter.
-* New window displays low and high RGB color range.
+Changes to original project branch:
+* Refactored video blob tracking methods into a separate class.
+* Refactored hard-coded color ranges. Now input parameters.
+* All methods now accept common struct containing input parameters.
+* New window displays low and high RGB color range color sample.
 * Added support for Travis-CI. Project now building on each commit to GitHub.
-* Project contains code and directions to install latest OpenCV, cvBlob, and all necessary dependencies on Ubuntu. Travis is using this code to prep for project builds.
-* Project contains directions on how to git clone, build, and run project on Ubuntu.
+* Project contains bash commands/script to install latest OpenCV, cvBlob, and all necessary dependencies on Ubuntu.
+* Project contains bash commands/script to git clone, build, package, and run this project on Ubuntu.
+* All installation and configuration tested with fresh Ubuntu image on VirtualBox VM 
 
 #### Installation and Configuration
-```
-################################################################
-#
-# installs latest OpenCV, cvBlob, all dependencies on Ubuntu
-# git clones, builds, and runs project on Ubuntu
-# tested with fresh Ubuntu image on VirtualBox VM
-#
-################################################################
-
+```bash
 sudo apt-get update && sudo apt-get -y upgrade
 
 # install OpenCV
@@ -38,30 +31,30 @@ git clone https://github.com/jayrambhia/Install-OpenCV
 cd Install-OpenCV/Ubuntu
 ./opencv_latest.sh | tee ~/opencv_install.log
 
-# install project
+# install object-tracking-blogpostobject-tracking-blogpost  project
 cd ~/
 git clone https://github.com/garystafford/object-tracking-blogpost.git
 
-#install cvBlob (uses script from project)
+#install cvBlob (uses script within object-tracking-blogpost project)
 cd ~/object-tracking-blogpost
 sh install_cvBlob.sh | tee ~/cvblob_install.log
 
-# build project (compile app)
+# build project (compile object tracking application)
 cd ~/object-tracking-blogpost/CppAppOpenCV
 make -f nbproject/Makefile-Release.mk QMAKE= SUBPROJECTS= .build-conf
 
 # optional - fixed problem with app finding cvBlob library when started
 echo 'LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' | sudo tee -a ~/.bashrc
 
-# run app
+# run object tracking application
 cd ~/object-tracking-blogpost/CppAppOpenCV/dist/Release/GNU-Linux-x86
 ./cppappopencv
 
-# package app for distribution as .tar (incld. static images)
+# package object tracking application for distribution as .tar (incld. static images)
 cd ~/object-tracking-blogpost/CppAppOpenCV
 bash nbproject/Package-Release.bash
 
-# use package
+# use packaged object tracking application
 cd ~/object-tracking-blogpost/CppAppOpenCV/dist/Release/GNU-Linux-x86/package/
 tar -xvf cppappopencv.tar -C ~/
 
