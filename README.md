@@ -27,9 +27,9 @@ sudo apt-get update && sudo apt-get -y upgrade
 # install openCV
 cd ~/
 sudo apt-get -y install git
-# I had problem with dependencies.sh finding libfaac-dev.
-# It's in multiverse repository, which is commentted out by default in sources.list.
-# Needed to modify /etc/apt/sources.list. See: http://superuser.com/a/467775
+# I had a problem with dependencies.sh finding libfaac-dev in multiverse repository.
+# Multiverse repository is commented out by default in sources.list.
+# Modify /etc/apt/sources.list. See: http://superuser.com/a/467775
 sed -i '/precise multiverse/s/# //g' /etc/apt/sources.list
 sed -i '/precise-updates multiverse/s/# //g' /etc/apt/sources.list
 #sed -i '/precise-security multiverse/s/# //g' /etc/apt/sources.list
@@ -48,7 +48,7 @@ sh /object-tracking-blogpost/install_cvBlob.sh | tee ~/cvblob_install.log
 
 # optional - fixed problem with app finding cvBlob library when started
 echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' | sudo tee -a ~/.bashrc
-bash --login # or exit VM and login back in
+bash --login # or exit VM and log back in
 
 # build project (compile object tracking application)
 cd ~/object-tracking-blogpost/CppAppOpenCV
