@@ -73,11 +73,15 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" "4" "352" "288"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" "3" "480" "320"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}";
+cp colored_balls.jpg "${OUTPUT_PATH}";</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"; cp colored_balls.jpg "${OUTPUT_PATH}";</runcommandpicklistitem>
+          <runcommandpicklistitem> "${OUTPUT_PATH}"</runcommandpicklistitem>
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
-        <console-type>2</console-type>
+        <console-type>1</console-type>
         <terminal-type>0</terminal-type>
         <remove-instrumentation>0</remove-instrumentation>
         <environment>

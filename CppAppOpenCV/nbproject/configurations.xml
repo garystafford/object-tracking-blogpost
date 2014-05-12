@@ -157,14 +157,12 @@
           <developmentMode>5</developmentMode>
           <incDir>
             <pElem>/usr/local/include/opencv</pElem>
-            <pElem>.</pElem>
           </incDir>
         </cTool>
         <ccTool>
           <stripSymbols>true</stripSymbols>
           <incDir>
             <pElem>/usr/local/include/opencv</pElem>
-            <pElem>.</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -227,6 +225,9 @@
         </packFileList>
       </packaging>
       <item path="colored_balls.jpg" ex="false" tool="3" flavor2="0">
+        <customTool>
+          <customToolOutputs>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/colored_balls.jpg</customToolOutputs>
+        </customTool>
       </item>
       <item path="colored_shapes.jpg" ex="false" tool="3" flavor2="0">
       </item>

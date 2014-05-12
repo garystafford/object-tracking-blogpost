@@ -104,30 +104,35 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/colored_balls.jpg: colored_balls.jpg 
+	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	@echo Performing Custom Build Step
+	
+
 ${OBJECTDIR}/imageParams.o: imageParams.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/imageParams.o imageParams.cpp
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/imageParams.o imageParams.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/testcvblobstill.o: testcvblobstill.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testcvblobstill.o testcvblobstill.cpp
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testcvblobstill.o testcvblobstill.cpp
 
 ${OBJECTDIR}/testcvblobvideo.o: testcvblobvideo.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testcvblobvideo.o testcvblobvideo.cpp
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testcvblobvideo.o testcvblobvideo.cpp
 
 ${OBJECTDIR}/testfps.o: testfps.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testfps.o testfps.cpp
+	$(COMPILE.cc) -g -s -I/usr/local/include/opencv -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/testfps.o testfps.cpp
 
 # Subprojects
 .build-subprojects:
@@ -136,6 +141,7 @@ ${OBJECTDIR}/testfps.o: testfps.cpp
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppappopencv
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/colored_balls.jpg
 
 # Subprojects
 .clean-subprojects:
