@@ -44,15 +44,15 @@ cd ~/
 git clone https://github.com/garystafford/object-tracking-blogpost.git
 
 #install cvBlob (uses script within object-tracking-blogpost project)
-cd ~/object-tracking-blogpost
-sh install_cvBlob.sh | tee ~/cvblob_install.log
+sh /object-tracking-blogpost/install_cvBlob.sh | tee ~/cvblob_install.log
+
+# optional - fixed problem with app finding cvBlob library when started
+echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' | sudo tee -a ~/.bashrc
+bash --login # or exit VM and login back in
 
 # build project (compile object tracking application)
 cd ~/object-tracking-blogpost/CppAppOpenCV
 make -f nbproject/Makefile-Release.mk QMAKE= SUBPROJECTS= .build-conf
-
-# optional - fixed problem with app finding cvBlob library when started
-echo 'LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' | sudo tee -a ~/.bashrc
 
 # run object tracking application
 cd ~/object-tracking-blogpost/CppAppOpenCV/dist/Release/GNU-Linux-x86

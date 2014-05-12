@@ -7,5 +7,5 @@ cd cvblob/
 mkdir build
 cd build
 cmake ..
-sudo make install
+sudo make install /usr/local/lib
 echo "--- Installation of cvBlob complete."
