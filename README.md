@@ -24,14 +24,17 @@ Changes to original project branch:
 ```bash
 sudo apt-get update && sudo apt-get -y upgrade
 
-# install OpenCV
+# install openCV
 cd ~/
 sudo apt-get -y install git
-# I had problem with dependencies.sh finding libfaac-dev (it's in multiverse repository)
-# Need to modify /etc/apt/sources.list. See: http://superuser.com/a/467775
+# I had problem with dependencies.sh finding libfaac-dev.
+# It's in multiverse repository, which is commentted out by default in sources.list.
+# Needed to modify /etc/apt/sources.list. See: http://superuser.com/a/467775
 sed -i '/precise multiverse/s/# //g' /etc/apt/sources.list
 sed -i '/precise-updates multiverse/s/# //g' /etc/apt/sources.list
 #sed -i '/precise-security multiverse/s/# //g' /etc/apt/sources.list
+sudo apt-get update
+
 git clone https://github.com/jayrambhia/Install-OpenCV
 cd Install-OpenCV/Ubuntu
 ./opencv_latest.sh | tee ~/opencv_install.log
