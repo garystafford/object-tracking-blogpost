@@ -77,5 +77,18 @@ These are the values shown in the blog post and YouTube video
   * High RGB: 134, 163, 216 
 * Green paper
   * Low RGB: 45, 92, 76
-  * High RGB: 70, 155, 124 
+  * High RGB: 70, 155, 124
+* Orange Pen
+  * Low RGB: 25, 90, 56
+  * High RGB: 255, 190, 120
+#### Previews
+<p>
+![Preview 1](https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_1_preview.png?raw=true)
+</p>
+<p>
+![Preview 2](https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_2_preview.png?raw=true)
+</p>
+<p>
+![Preview 3](https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4_preview.png?raw=true)
+</p>
  
