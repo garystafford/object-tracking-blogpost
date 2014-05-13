@@ -91,6 +91,5 @@ These are the values shown in the blog post and YouTube video
 </p>
 <p>
 ![Preview 3](https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4_preview.png?raw=true)
-<a href='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4_preview.png?raw=true'><img src='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4.png?raw=true'></a>
 </p>
  
