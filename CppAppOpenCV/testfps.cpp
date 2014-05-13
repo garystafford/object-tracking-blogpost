@@ -15,11 +15,13 @@
 
 using namespace std;
 
+const int webcamID = 1;
+
 // Test 1: OpenCV (w/ webcam feed)
 
 int TestFpsNoVideo(struct imageParams params) {
     IplImage* frame;
-    CvCapture* capture = cvCreateCameraCapture(-1);
+    CvCapture* capture = cvCreateCameraCapture(webcamID);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, params.captureWidth);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, params.captureHeight);
 
@@ -61,7 +63,7 @@ int TestFpsNoVideo(struct imageParams params) {
 
 int TestFpsShowVideo(struct imageParams params) {
     IplImage* frame;
-    CvCapture* capture = cvCreateCameraCapture(-1);
+    CvCapture* capture = cvCreateCameraCapture(webcamID);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, params.captureWidth);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, params.captureHeight);
     cvNamedWindow("Webcam Preview", CV_WINDOW_AUTOSIZE);

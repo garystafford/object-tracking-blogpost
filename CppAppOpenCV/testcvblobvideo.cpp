@@ -16,6 +16,8 @@
 using namespace cvb;
 using namespace std;
 
+const int webcamID = 1;
+
 // Test 5: Blob Tracking (w/ webcam feed)
 
 int DetectBlobsNoVideo(struct imageParams params) {
@@ -35,7 +37,7 @@ int DetectBlobsNoVideo(struct imageParams params) {
     bool quit = false;
     ///////////////////////////////////////////////////////////////////////
 
-    capture = cvCaptureFromCAM(-1);
+    capture = cvCaptureFromCAM(webcamID);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, params.captureWidth);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, params.captureHeight);
     cvGrabFrame(capture);
@@ -142,7 +144,7 @@ int DetectBlobsShowVideo(struct imageParams params) {
     cvNamedWindow("Color Range", CV_WINDOW_AUTOSIZE);
     cvMoveWindow("Color Range", 100, 600);
 
-    capture = cvCaptureFromCAM(-1);
+    capture = cvCaptureFromCAM(webcamID);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, params.captureWidth);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, params.captureHeight);
     cvGrabFrame(capture);
