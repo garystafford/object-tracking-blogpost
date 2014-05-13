@@ -84,11 +84,14 @@ These are the values shown in the blog post and YouTube video
 
 #### Previews
 <p>
-    <a href='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_1.png?raw=true'><img src='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_1_preview.png?raw=true'>Options</a>
+    <a href='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_1.png?raw=true'><img src='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_1_preview.png?raw=true'>
+    Options</a>
 </p>
 <p>
-    <a href='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_2.png?raw=true'><img src='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_2_preview.png?raw=true'>Still Image Blob Detection</a>
+    <a href='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_2.png?raw=true'><img src='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_2_preview.png?raw=true'>
+    Still Image Blob Detection</a>
 </p>
 <p>
-    <a href='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4.png?raw=true'><img src='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4_preview.png?raw=true'>Live Video Blob Detection</a>
+    <a href='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4.png?raw=true'><img src='https://github.com/garystafford/object-tracking-blogpost/blob/rev05_2014/images/object_grab_4_preview.png?raw=true'>
+    Live Video Blob Detection</a>
 </p>
